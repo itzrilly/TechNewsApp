@@ -88,11 +88,11 @@ const styles = StyleSheet.create({
     },
     date: {
         fontWeight: 'bold',
-        color: '#e63946',
+        color: '#2ec4b6',
         fontSize: 15
     },
     source: {
-        color: '#e63946',
+        color: '#2ec4b6',
         fontWeight: 'bold',
         fontSize: 18
     }

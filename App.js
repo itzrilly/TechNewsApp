@@ -13,13 +13,18 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator screenOptions={{
           tabBarActiveTintColor: 'red',
-
+          tabBarStyle:{
+            backgroundColor:'#2ec4b6',
+            borderTopLeftRadius: 50,
+            borderTopRightRadius: 50
+          },
+          tabBarShowLabel: false
         }}>
           <Tab.Screen name='Accueil' component={HomeScreen} options={{
-            tabBarIcon: () => <Entypo name="home" size={24} color="black" />
+            tabBarIcon: () => <Entypo name="home" size={24} color='#fff' />
           }} />
           <Tab.Screen name='Recherche' component={SearchScreen} options={{
-            tabBarIcon: () => <FontAwesome name="search" size={24} color="black" />
+            tabBarIcon: () => <FontAwesome name="search" size={24} color='#fff' />
           }} />
         </Tab.Navigator>
     </NavigationContainer>
