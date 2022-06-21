@@ -15,10 +15,10 @@ export default function App() {
           tabBarActiveTintColor: 'red',
 
         }}>
-          <Tab.Screen name='Home' component={HomeScreen} options={{
+          <Tab.Screen name='Accueil' component={HomeScreen} options={{
             tabBarIcon: () => <Entypo name="home" size={24} color="black" />
           }} />
-          <Tab.Screen name='Search' component={SearchScreen} options={{
+          <Tab.Screen name='Recherche' component={SearchScreen} options={{
             tabBarIcon: () => <FontAwesome name="search" size={24} color="black" />
           }} />
         </Tab.Navigator>
