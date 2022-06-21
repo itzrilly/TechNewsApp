@@ -1,33 +1,33 @@
 import React from 'react'
 import { View, StyleSheet, Text, SafeAreaView, Image, Dimensions } from 'react-native'
+import moment from 'moment'
 
-const Article = () => {
+const Article = (props) => {
     return (
         <SafeAreaView style={styles.container}>
             { /* image */ }
             <Image  
-                source={{ uri: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dGVjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60' }}  
+                source={{ uri: props.urlToImage }}  
                 style={styles.image} 
             />
 
             <View style={{ padding: 20 }}>
                 { /* title */ }
-                <Text style={styles.title}>Tech News Application using React Native</Text>
+                <Text style={styles.title}>{props.title}</Text>
                 
                 { /* description */ }
-                <Text style={styles.description}>
-                    You are watching this tutorial from ProgrammingKnowledge Youtube Channel!
-                    You are watching this tutorial from ProgrammingKnowledge Youtube Channel!
+                <Text style={styles.description} numberOfLines={3} >
+                    {props.description}
                 </Text>
 
                 <View style={styles.data}>
-                    <Text style={styles.heading}>by: <Text style={styles.author}>Ridwane Garba</Text></Text>
-                    <Text style={styles.date}>Aug 9th 22</Text>
+                    <Text style={styles.heading}>by: <Text style={styles.author}>{props.author}</Text></Text>
+                    <Text style={styles.date}>{moment(props.publishedAt).format("MMM Do YY")}</Text>
                 </View>
 
                 {/*  source  */}
                 <View style={{ marginTop: 10 }}>
-                    <Text>source: <Text style={styles.source}>ProgrammingKnowledge</Text></Text>
+                    <Text>source: <Text style={styles.source}>{props.sourceName}</Text></Text>
                 </View>
             </View>
 
