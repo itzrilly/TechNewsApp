@@ -33,8 +33,7 @@ const HomeScreen = () => {
             <FlatList
                 data={articles}
                 renderItem = {
-                    ({item}) => 
-                    <Article
+                    ({item}) => <Article
                         urlToImage = {item.urlToImage}
                         title = {item.title}
                         description = {item.description}
@@ -43,7 +42,7 @@ const HomeScreen = () => {
                         sourceName = {item.source.name}
                     />
                 }
-                keyExtractor= {(item) => item.title}
+                keyExtractor={(item) => item.title}
             />
         </SafeAreaView>
     )
