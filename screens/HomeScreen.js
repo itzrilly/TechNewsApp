@@ -8,7 +8,7 @@ const HomeScreen = () => {
     const getNews = () => {
         axios.get('https://newsapi.org/v2/top-headlines?country=fr&apiKey=80da886259cd4f718da1cff1621a275a',{
             params: {
-                category: 'technology'
+                category: 'sports'
             }
         }).then((response) => {
             // en cas de réussite de la requête
@@ -40,6 +40,7 @@ const HomeScreen = () => {
                         author = {item.author}
                         publishedAt = {item.publishedAt}
                         sourceName = {item.source.name}
+                        url = {item.url}
                     />
                 }
                 keyExtractor={(item) => item.title}

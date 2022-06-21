@@ -1,10 +1,16 @@
 import React from 'react'
-import { View, StyleSheet, Text, SafeAreaView, Image, Dimensions } from 'react-native'
+import { View, StyleSheet, Text, SafeAreaView, Image, Dimensions, Pressable } from 'react-native'
 import moment from 'moment'
+import * as WebBrowser from 'expo-web-browser'
 
 const Article = (props) => {
+
+    const goToSource = () => {
+        WebBrowser.openBrowserAsync(props.url)
+    }
+
     return (
-        <SafeAreaView style={styles.container}>
+        <Pressable style={styles.container} onPress={goToSource}>
             { /* image */ }
             <Image  
                 source={{ uri: props.urlToImage }}  
@@ -21,17 +27,19 @@ const Article = (props) => {
                 </Text>
 
                 <View style={styles.data}>
-                    <Text style={styles.heading}>by: <Text style={styles.author}>{props.author}</Text></Text>
-                    <Text style={styles.date}>{moment(props.publishedAt).format("MMM Do YY")}</Text>
+                    <Text style={styles.heading}>
+                        Par: <Text style={styles.author}>{props.author}</Text>
+                    </Text>
+                    <Text style={styles.date}>{moment(new Date(props.publishedAt)).format('DD/MM/YYYY')}</Text>
                 </View>
 
                 {/*  source  */}
                 <View style={{ marginTop: 10 }}>
-                    <Text>source: <Text style={styles.source}>{props.sourceName}</Text></Text>
+                    <Text>Source: <Text style={styles.source}>{props.sourceName}</Text></Text>
                 </View>
             </View>
 
-        </SafeAreaView>
+        </Pressable>
     )
 }
 
